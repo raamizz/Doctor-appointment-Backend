@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
     if (!doctor) {
       return res.status(404).json({ message: 'Doctor not found' });
     }
-    //Check if the time slot is already booked
+    //To Check if the time slot is already booked
     const existingAppointment = await Appointment.findOne({
       doctor: req.body.doctor,
       date: req.body.date,
